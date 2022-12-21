@@ -1,9 +1,31 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Medidor de Jogabilidade</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Medidor de Jogabilidade</h1>
 
-Welcome to your new app.
+<p>Insira o nome para o Shicha avaliar</p>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<EditForm Model="@medidorModel" OnValidSubmit="@HandleValidSubmit">
+    <InputText id="name" @bind-Value="medidorModel.Name" />
+
+    <button type="submit">Joga?</button>
+</EditForm>
+
+@code {
+    private MedidorModel medidorModel = new();
+
+    private void HandleValidSubmit()
+    {
+        if(string.IsNullOrWhiteSpace(medidorModel.Name))
+            return;
+        
+        var name = medidorModel.Name.Trim();
+
+        if(string.Equals(name, "SHICHA", StringComparison.InvariantCultureIgnoreCase)
+        || string.Equals(name, "RENAN", StringComparison.InvariantCultureIgnoreCase))
+            System.Console.WriteLine("SIM");
+        else
+            System.Console.WriteLine("NÃO");
+    }
+}
