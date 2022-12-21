@@ -3,15 +3,16 @@
 
 <PageTitle>Medidor de Jogabilidade</PageTitle>
 
-<h1>Medidor de Jogabilidade</h1>
+<h1><strong>Medidor de Jogabilidade</strong></h1>
+<h5>Será que você joga muito?</h5>
 
 <EditForm Model="@medidorModel" OnValidSubmit="@HandleValidSubmit">
     <div class="mb-3">
-        <label for="name" class="form-label">Será que você joga muito? <br> Insira seu nome aqui:</label>
+        <label for="name" class="form-label">Insira seu nome aqui:</label>
         <InputText id="name" @bind-Value="medidorModel.Name" class="form-control"/>
     </div>
     
-    <button class="btn btn-primary" type="submit">
+    <button class="btn btn-success" type="submit">
         <span>Joga?</span>
     </button>
 </EditForm>
@@ -29,7 +30,7 @@
         if(string.Equals(name, "SHICHA", StringComparison.InvariantCultureIgnoreCase)
         || string.Equals(name, "GERSON", StringComparison.InvariantCultureIgnoreCase)
         || string.Equals(name, "RENAN", StringComparison.InvariantCultureIgnoreCase))
-            modal.Show<Yes>("JOGA");
+            modal.Show<Yes>("JOGA MUITO");
         else
             modal.Show<Nope>("JOGA NADA");
     }
