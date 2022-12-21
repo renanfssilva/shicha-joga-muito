@@ -27,9 +27,9 @@
         var name = medidorModel.Name.Trim();
 
         if(string.Equals(name, "SHICHA", StringComparison.InvariantCultureIgnoreCase)
-        || string.Equals(name, "RENAN", StringComparison.InvariantCultureIgnoreCase)){
+        || string.Equals(name, "GERSON", StringComparison.InvariantCultureIgnoreCase)
+        || string.Equals(name, "RENAN", StringComparison.InvariantCultureIgnoreCase))
             modal.Show<Yes>("JOGA");
-        }
         else
             modal.Show<Nope>("JOGA NADA");
     }
