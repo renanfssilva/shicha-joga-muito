@@ -4,12 +4,15 @@
 
 <h1>Medidor de Jogabilidade</h1>
 
-<p>Será que você joga muito? Insira seu nome aqui</p>
-
 <EditForm Model="@medidorModel" OnValidSubmit="@HandleValidSubmit">
-    <InputText id="name" @bind-Value="medidorModel.Name" />
-
-    <button type="submit">Joga?</button>
+    <div class="mb-3">
+        <label for="name" class="form-label">Será que você joga muito? <br> Insira seu nome aqui:</label>
+        <InputText id="name" @bind-Value="medidorModel.Name" class="form-control"/>
+    </div>
+    
+    <button class="btn btn-primary" type="submit">
+        <span>Joga?</span>
+    </button>
 </EditForm>
 
 @code {
